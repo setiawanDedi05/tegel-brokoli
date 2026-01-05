@@ -1,0 +1,17 @@
+version: '3.8'
+services:
+  db:
+    image: postgres:15-alpine
+    container_name: tegel-brokoli-db
+    restart: always
+    environment:
+      POSTGRES_USER: user_brokoli
+      POSTGRES_PASSWORD: password_rahasia
+      POSTGRES_DB: db_tegel_brokoli
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
